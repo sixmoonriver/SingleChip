@@ -1,165 +1,165 @@
 #ifndef _MCP2515_H_
 #define _MCP2515_H_
-#define MCP2515_BASE    0x00 //	 ¶¨ÒåMCP2515µÄ»ùÖ·
+#define MCP2515_BASE    0x00 //	 定义MCP2515的基址
 
 /*************************************************************************************************
-    ÒÔÏÂÎª¶¨ÒåMCP2515µÄÄÚ²¿ÌØÊâ¹¦ÄÜ¼Ä´æÆ÷µÄµØÖ·£¬¸÷ÌØÊâ¹¦ÄÜ¼Ä´æÆ÷µÄ¾ßÌå¹¦ÄÜÇë²éÔÄMCP2515µÄÊý¾ÝÊÖ²á
+    以下为定义MCP2515的内部特殊功能寄存器的地址，各特殊功能寄存器的具体功能请查阅MCP2515的数据手册
 **************************************************************************************************/
 
-#define TXB0CTRL	MCP2515_BASE + 0x30  //·¢ËÍ»º³åÇø0¿ØÖÆ¼Ä´æÆ÷
-#define TXB1CTRL	MCP2515_BASE + 0x40  //·¢ËÍ»º³åÇø1¿ØÖÆ¼Ä´æÆ÷
-#define TXB2CTRL	MCP2515_BASE + 0x50  //·¢ËÍ»º³åÇø2¿ØÖÆ¼Ä´æÆ÷
-#define TXRTSCTRL	MCP2515_BASE + 0x0d  //·¢ËÍÇëÇóÒý½ÅÅäÖÃ¼Ä´æÆ÷
-#define TXB0SIDH 	MCP2515_BASE + 0x31  //±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define TXB0SIDL 	MCP2515_BASE + 0x32  //±ê×¼±êÊ¶·ûµÍ×Ö½Ú
-#define TXB1SIDH 	MCP2515_BASE + 0x41  //±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define TXB1SIDL 	MCP2515_BASE + 0x42  //±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define TXB2SIDH 	MCP2515_BASE + 0x51  //±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define TXB2SIDL 	MCP2515_BASE + 0x52  //±ê×¼±êÊ¶·ûµÍ×Ö½Ú
-#define TXB0EID8	MCP2515_BASE + 0x33  //À©Õ¹±êÊ¶·û¸ß×Ö½Ú
-#define TXB0EID0	MCP2515_BASE + 0x34  //À©Õ¹±êÊ¶·ûµÍ×Ö½Ú
-#define TXB1EID8	MCP2515_BASE + 0x43  //À©Õ¹±êÊ¶·û¸ß×Ö½Ú
-#define TXB1EID0	MCP2515_BASE + 0x44  //À©Õ¹±êÊ¶·ûµÍ×Ö½Ú
-#define TXB2EID8	MCP2515_BASE + 0x53  //À©Õ¹±êÊ¶·û¸ß×Ö½Ú
-#define TXB2EID0	MCP2515_BASE + 0x54  //À©Õ¹±êÊ¶·ûµÍ×Ö½Ú
-#define TXB0DLC		MCP2515_BASE + 0x35  //·¢ËÍ»º´æÇø0Êý¾Ý³¤¶È¼Ä´æÆ÷
-#define TXB1DLC		MCP2515_BASE + 0x45  //·¢ËÍ»º´æÇø0Êý¾Ý³¤¶È¼Ä´æÆ÷
-#define TXB2DLC		MCP2515_BASE + 0x55  //·¢ËÍ»º´æÇø0Êý¾Ý³¤¶È¼Ä´æÆ÷
-#define TXB0D_BASE	MCP2515_BASE + 0x36  //·¢ËÍËç³åÇø0Êý¾Ý¼Ä´æÆ÷ÆðÊ¼µØÖ·
-#define TXB1D_BASE	MCP2515_BASE + 0x46  //·¢ËÍËç³åÇø1Êý¾Ý¼Ä´æÆ÷ÆðÊ¼µØÖ·
-#define TXB2D_BASE	MCP2515_BASE + 0x56  //·¢ËÍËç³åÇø2Êý¾Ý¼Ä´æÆ÷ÆðÊ¼µØÖ·
-#define RXB0CTRL	MCP2515_BASE + 0x60  //½ÓÊÕ»º³åÇø0¿ØÖÆ¼Ä´æÆ÷
-#define RXB1CTRL	MCP2515_BASE + 0x70  //½ÓÊÕ»º³åÇø1¿ØÖÆ¼Ä´æÆ÷
-#define BFPCTRL		MCP2515_BASE + 0x0c  //½ÓÊÕÒý½Å¿ØÖÆºÍ×´Ì¬¼Ä´æÆ÷
-#define RXB0SIDH	MCP2515_BASE + 0x61  //½ÓÊÕ»º³åÆ÷0±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define RXB0SIDL	MCP2515_BASE + 0x62  //½ÓÊÕ»º³åÆ÷0±ê×¼±êÊ¶·ûµÍ×Ö½Ú
-#define RXB1SIDH	MCP2515_BASE + 0x71  //½ÓÊÕ»º³åÆ÷1±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define RXB1SIDL	MCP2515_BASE + 0x72  //½ÓÊÕ»º³åÆ÷1±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define RXB0EID8	MCP2515_BASE + 0x63  //½ÓÊÕ»º³åÇø0À©Õ¹±êÊ¶·û¸ß×Ö½Ú
-#define RXB0EID0	MCP2515_BASE + 0x64  //½ÓÊÕ»º³åÇø0À©Õ¹±êÊ¶·ûµÍ×Ö½Ú
-#define RXB1EID8	MCP2515_BASE + 0x73  //½ÓÊÕ»º³åÇø1À©Õ¹±êÊ¶·û¸ß×Ö½Ú
-#define RXB1EID0	MCP2515_BASE + 0x74  //½ÓÊÕ»º³åÇø1À©Õ¹±êÊ¶·ûµÍ×Ö½Ú
-#define RXB0DLC		MCP2515_BASE + 0x65	 //½ÓÊÕ»º³åÇø0Êý¾ÝÂë³¤¶È
-#define RXB1DLC		MCP2515_BASE + 0x75	 //½ÓÊÕ»º³åÇø1Êý¾ÝÂë³¤¶È
-#define RXB0D_BASE	MCP2515_BASE + 0x66  //½ÓÊÕ»º³åÇø0Êý¾Ý¼Ä´æÆ÷ÆðÊ¼µØÖ·
-#define RXB1D_BASE	MCP2515_BASE + 0x76  //½ÓÊÕ»º³åÇø1Êý¾Ý¼Ä´æÆ÷ÆðÊ¼µØÖ·
+#define TXB0CTRL	MCP2515_BASE + 0x30  //发送缓冲区0控制寄存器
+#define TXB1CTRL	MCP2515_BASE + 0x40  //发送缓冲区1控制寄存器
+#define TXB2CTRL	MCP2515_BASE + 0x50  //发送缓冲区2控制寄存器
+#define TXRTSCTRL	MCP2515_BASE + 0x0d  //发送请求引脚配置寄存器
+#define TXB0SIDH 	MCP2515_BASE + 0x31  //标准标识符高字节
+#define TXB0SIDL 	MCP2515_BASE + 0x32  //标准标识符低字节
+#define TXB1SIDH 	MCP2515_BASE + 0x41  //标准标识符高字节
+#define TXB1SIDL 	MCP2515_BASE + 0x42  //标准标识符高字节
+#define TXB2SIDH 	MCP2515_BASE + 0x51  //标准标识符高字节
+#define TXB2SIDL 	MCP2515_BASE + 0x52  //标准标识符低字节
+#define TXB0EID8	MCP2515_BASE + 0x33  //扩展标识符高字节
+#define TXB0EID0	MCP2515_BASE + 0x34  //扩展标识符低字节
+#define TXB1EID8	MCP2515_BASE + 0x43  //扩展标识符高字节
+#define TXB1EID0	MCP2515_BASE + 0x44  //扩展标识符低字节
+#define TXB2EID8	MCP2515_BASE + 0x53  //扩展标识符高字节
+#define TXB2EID0	MCP2515_BASE + 0x54  //扩展标识符低字节
+#define TXB0DLC		MCP2515_BASE + 0x35  //发送缓存区0数据长度寄存器
+#define TXB1DLC		MCP2515_BASE + 0x45  //发送缓存区0数据长度寄存器
+#define TXB2DLC		MCP2515_BASE + 0x55  //发送缓存区0数据长度寄存器
+#define TXB0D_BASE	MCP2515_BASE + 0x36  //发送绥冲区0数据寄存器起始地址
+#define TXB1D_BASE	MCP2515_BASE + 0x46  //发送绥冲区1数据寄存器起始地址
+#define TXB2D_BASE	MCP2515_BASE + 0x56  //发送绥冲区2数据寄存器起始地址
+#define RXB0CTRL	MCP2515_BASE + 0x60  //接收缓冲区0控制寄存器
+#define RXB1CTRL	MCP2515_BASE + 0x70  //接收缓冲区1控制寄存器
+#define BFPCTRL		MCP2515_BASE + 0x0c  //接收引脚控制和状态寄存器
+#define RXB0SIDH	MCP2515_BASE + 0x61  //接收缓冲器0标准标识符高字节
+#define RXB0SIDL	MCP2515_BASE + 0x62  //接收缓冲器0标准标识符低字节
+#define RXB1SIDH	MCP2515_BASE + 0x71  //接收缓冲器1标准标识符高字节
+#define RXB1SIDL	MCP2515_BASE + 0x72  //接收缓冲器1标准标识符高字节
+#define RXB0EID8	MCP2515_BASE + 0x63  //接收缓冲区0扩展标识符高字节
+#define RXB0EID0	MCP2515_BASE + 0x64  //接收缓冲区0扩展标识符低字节
+#define RXB1EID8	MCP2515_BASE + 0x73  //接收缓冲区1扩展标识符高字节
+#define RXB1EID0	MCP2515_BASE + 0x74  //接收缓冲区1扩展标识符低字节
+#define RXB0DLC		MCP2515_BASE + 0x65	 //接收缓冲区0数据码长度
+#define RXB1DLC		MCP2515_BASE + 0x75	 //接收缓冲区1数据码长度
+#define RXB0D_BASE	MCP2515_BASE + 0x66  //接收缓冲区0数据寄存器起始地址
+#define RXB1D_BASE	MCP2515_BASE + 0x76  //接收缓冲区1数据寄存器起始地址
 
-#define RXF0SIDH	MCP2515_BASE + 0x00  //ÑéÊÕÂË²¨Æ÷0±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define RXF0SIDL	MCP2515_BASE + 0x01  //ÑéÊÕÂË²¨Æ÷0±ê×¼±êÊ¶·ûµÍ×Ö½Ú
-#define RXF1SIDH	MCP2515_BASE + 0x04  //ÑéÊÕÂË²¨Æ÷1±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define RXF1SIDL	MCP2515_BASE + 0x05  //ÑéÊÕÂË²¨Æ÷1±ê×¼±êÊ¶·ûµÍ×Ö½Ú
-#define RXF2SIDH	MCP2515_BASE + 0x08  //ÑéÊÕÂË²¨Æ÷2±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define RXF2SIDL	MCP2515_BASE + 0x09  //ÑéÊÕÂË²¨Æ÷2±ê×¼±êÊ¶·ûµÍ×Ö½Ú
-#define RXF3SIDH	MCP2515_BASE + 0x10  //ÑéÊÕÂË²¨Æ÷3±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define RXF3SIDL	MCP2515_BASE + 0x11  //ÑéÊÕÂË²¨Æ÷3±ê×¼±êÊ¶·ûµÍ×Ö½Ú
-#define RXF4SIDH	MCP2515_BASE + 0x14  //ÑéÊÕÂË²¨Æ÷4±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define RXF4SIDL	MCP2515_BASE + 0x15  //ÑéÊÕÂË²¨Æ÷4±ê×¼±êÊ¶·ûµÍ×Ö½Ú
-#define RXF5SIDH	MCP2515_BASE + 0x18  //ÑéÊÕÂË²¨Æ÷5±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define RXF5SIDL	MCP2515_BASE + 0x19  //ÑéÊÕÂË²¨Æ÷5±ê×¼±êÊ¶·ûµÍ×Ö½Ú
+#define RXF0SIDH	MCP2515_BASE + 0x00  //验收滤波器0标准标识符高字节
+#define RXF0SIDL	MCP2515_BASE + 0x01  //验收滤波器0标准标识符低字节
+#define RXF1SIDH	MCP2515_BASE + 0x04  //验收滤波器1标准标识符高字节
+#define RXF1SIDL	MCP2515_BASE + 0x05  //验收滤波器1标准标识符低字节
+#define RXF2SIDH	MCP2515_BASE + 0x08  //验收滤波器2标准标识符高字节
+#define RXF2SIDL	MCP2515_BASE + 0x09  //验收滤波器2标准标识符低字节
+#define RXF3SIDH	MCP2515_BASE + 0x10  //验收滤波器3标准标识符高字节
+#define RXF3SIDL	MCP2515_BASE + 0x11  //验收滤波器3标准标识符低字节
+#define RXF4SIDH	MCP2515_BASE + 0x14  //验收滤波器4标准标识符高字节
+#define RXF4SIDL	MCP2515_BASE + 0x15  //验收滤波器4标准标识符低字节
+#define RXF5SIDH	MCP2515_BASE + 0x18  //验收滤波器5标准标识符高字节
+#define RXF5SIDL	MCP2515_BASE + 0x19  //验收滤波器5标准标识符低字节
 
-#define RXF0EID8	MCP2515_BASE + 0x02  //ÑéÊÕÂË²¨Æ÷0À©Õ¹±êÊ¶·û¸ß×Ö½Ú
-#define RXF0EID0	MCP2515_BASE + 0x03  //ÑéÊÕÂË²¨Æ÷0À©Õ¹±êÊ¶·ûµÍ×Ö½Ú
-#define RXF1EID8	MCP2515_BASE + 0x06  //ÑéÊÕÂË²¨Æ÷1À©Õ¹±êÊ¶·û¸ß×Ö½Ú
-#define RXF1EID0	MCP2515_BASE + 0x07  //ÑéÊÕÂË²¨Æ÷1À©Õ¹±êÊ¶·ûµÍ×Ö½Ú
-#define RXF2EID8	MCP2515_BASE + 0x0a  //ÑéÊÕÂË²¨Æ÷2À©Õ¹±êÊ¶·û¸ß×Ö½Ú
-#define RXF2EID0	MCP2515_BASE + 0x0b  //ÑéÊÕÂË²¨Æ÷2À©Õ¹±êÊ¶·ûµÍ×Ö½Ú
-#define RXF3EID8	MCP2515_BASE + 0x12  //ÑéÊÕÂË²¨Æ÷3À©Õ¹±êÊ¶·û¸ß×Ö½Ú
-#define RXF3EID0	MCP2515_BASE + 0x13  //ÑéÊÕÂË²¨Æ÷3À©Õ¹±êÊ¶·ûµÍ×Ö½Ú
-#define RXF4EID8	MCP2515_BASE + 0x16  //ÑéÊÕÂË²¨Æ÷4À©Õ¹±êÊ¶·û¸ß×Ö½Ú
-#define RXF4EID0	MCP2515_BASE + 0x17  //ÑéÊÕÂË²¨Æ÷4À©Õ¹±êÊ¶·ûµÍ×Ö½Ú
-#define RXF5EID8	MCP2515_BASE + 0x1a  //ÑéÊÕÂË²¨Æ÷5À©Õ¹±êÊ¶·û¸ß×Ö½Ú
-#define RXF5EID0	MCP2515_BASE + 0x1b  //ÑéÊÕÂË²¨Æ÷5À©Õ¹±êÊ¶·ûµÍ×Ö½Ú
+#define RXF0EID8	MCP2515_BASE + 0x02  //验收滤波器0扩展标识符高字节
+#define RXF0EID0	MCP2515_BASE + 0x03  //验收滤波器0扩展标识符低字节
+#define RXF1EID8	MCP2515_BASE + 0x06  //验收滤波器1扩展标识符高字节
+#define RXF1EID0	MCP2515_BASE + 0x07  //验收滤波器1扩展标识符低字节
+#define RXF2EID8	MCP2515_BASE + 0x0a  //验收滤波器2扩展标识符高字节
+#define RXF2EID0	MCP2515_BASE + 0x0b  //验收滤波器2扩展标识符低字节
+#define RXF3EID8	MCP2515_BASE + 0x12  //验收滤波器3扩展标识符高字节
+#define RXF3EID0	MCP2515_BASE + 0x13  //验收滤波器3扩展标识符低字节
+#define RXF4EID8	MCP2515_BASE + 0x16  //验收滤波器4扩展标识符高字节
+#define RXF4EID0	MCP2515_BASE + 0x17  //验收滤波器4扩展标识符低字节
+#define RXF5EID8	MCP2515_BASE + 0x1a  //验收滤波器5扩展标识符高字节
+#define RXF5EID0	MCP2515_BASE + 0x1b  //验收滤波器5扩展标识符低字节
 
-#define RXM0SIDH	MCP2515_BASE + 0x20  //ÑéÊÕÆÁ±Î¼Ä´æÆ÷0±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define RXM0SIDL	MCP2515_BASE + 0x21  //ÑéÊÕÆÁ±Î¼Ä´æÆ÷0±ê×¼±êÊ¶·ûµÍ×Ö½Ú
-#define RXM1SIDH	MCP2515_BASE + 0x24  //ÑéÊÕÆÁ±Î¼Ä´æÆ÷1±ê×¼±êÊ¶·û¸ß×Ö½Ú
-#define RXM1SIDL	MCP2515_BASE + 0x25  //ÑéÊÕÆÁ±Î¼Ä´æÆ÷1±ê×¼±êÊ¶·ûµÍ×Ö½Ú
+#define RXM0SIDH	MCP2515_BASE + 0x20  //验收屏蔽寄存器0标准标识符高字节
+#define RXM0SIDL	MCP2515_BASE + 0x21  //验收屏蔽寄存器0标准标识符低字节
+#define RXM1SIDH	MCP2515_BASE + 0x24  //验收屏蔽寄存器1标准标识符高字节
+#define RXM1SIDL	MCP2515_BASE + 0x25  //验收屏蔽寄存器1标准标识符低字节
 
-#define RXM0EID8	MCP2515_BASE + 0x22  //ÑéÊÕÆÁ±Î¼Ä´æÆ÷0À©Õ¹±êÊ¶·û¸ß×Ö½Ú
-#define RXM0EID0	MCP2515_BASE + 0x26  //ÑéÊÕÆÁ±Î¼Ä´æÆ÷0À©Õ¹±êÊ¶·ûµÍ×Ö½Ú
-#define RXM1EID8	MCP2515_BASE + 0x23  //ÑéÊÕÆÁ±Î¼Ä´æÆ÷1À©Õ¹±êÊ¶·û¸ß×Ö½Ú
-#define RXM1EID0	MCP2515_BASE + 0x27  //ÑéÊÕÆÁ±Î¼Ä´æÆ÷1À©Õ¹±êÊ¶·ûµÍ×Ö½Ú
+#define RXM0EID8	MCP2515_BASE + 0x22  //验收屏蔽寄存器0扩展标识符高字节
+#define RXM0EID0	MCP2515_BASE + 0x26  //验收屏蔽寄存器0扩展标识符低字节
+#define RXM1EID8	MCP2515_BASE + 0x23  //验收屏蔽寄存器1扩展标识符高字节
+#define RXM1EID0	MCP2515_BASE + 0x27  //验收屏蔽寄存器1扩展标识符低字节
 
-#define CNF1		MCP2515_BASE + 0x2a  //ÅäÖÃ¼Ä´æÆ÷1
-#define CNF2		MCP2515_BASE + 0x29  //ÅäÖÃ¼Ä´æÆ÷2
-#define CNF3		MCP2515_BASE + 0x28  //ÅäÖÃ¼Ä´æÆ÷3
-#define TEC			MCP2515_BASE + 0x1c  //·¢ËÍ´íÎó¼ÆÊýÆ÷
-#define REC			MCP2515_BASE + 0x1d  //½ÓÊÕ´íÎó¼ÆÊýÆ÷
-#define EFLG		MCP2515_BASE + 0x2d  //´íÎó±êÖ¾¼Ä´æÆ÷£¬×î¸ß2Î»±ØÐëÓÉMCU¸´Î»
-#define CANINTE		MCP2515_BASE + 0x2b  //ÖÐ¶ÏÊ¹ÄÜ¼Ä´æÆ÷
-#define CANINTF		MCP2515_BASE + 0x2c  //ÖÐ¶Ï±êÖ¾¼Ä´æÆ÷£¬Ð´0ÔòÇå³ýÏàÓ¦µÄÖÐ¶Ï£»
-#define CANCTRL		MCP2515_BASE + 0x0f  //CAN¿ØÖÆ¼Ä´æÆ÷
-#define CANSTAT		MCP2515_BASE + 0x0e  //CAN×´Ì¬¼Ä´æÆ÷
-
-/************************************************************************************
-			¶¨ÒåEFLG´íÎó±êÖ¾¼Ä´æÆ÷µÄÃüÁî×Ö
-************************************************************************************/
-#define EWARN		0x01<<0 			//´íÎó¾¯¸æ¼Ä´æÆ÷£¬µ±TEC»òREC´óÓÚµÈÓÚ96Ê±ÖÃ1
-#define RXWAR		0x01<<1 			//µ±REC´óÓÚµÈÓÚ96Ê±ÖÃ1
-#define TXWAR		0x01<<2 			//µ±TEC´óÓÚµÈÓÚ96Ê±ÖÃ1
-#define RXEP		0x01<<3 			//µ±REC´óÓÚµÈÓÚ128Ê±ÖÃ1
-#define TXEP		0x01<<4 			//µ±TEC´óÓÚµÈÓÚ128Ê±ÖÃ1
-#define TXBO		0x01<<5 			//µ±TEC´óÓÚµÈÓÚ255Ê±ÖÃ1
-#define RX0OVR 		0x01<<6				//½ÓÊÕ»º³åÇø0Òç³ö
-#define RX1OVR 		0x01<<7				//½ÓÊÕ»º³åÇø1Òç³ö
-/************************************************************************************
-			¶¨ÒåTXBnCTRL¼Ä´æÆ÷µÄÃüÁî×Ö
-************************************************************************************/
-#define TXREQ		0x08				//±¨ÎÄ·¢ËÍÇëÇóÎ»
-#define ABTF		0x40				//±¨ÎÄ·¢ËÍÖÐÖ¹±ê¼ÇÎ»
-/****************TXBnDLC¼Ä´æÆ÷ºÍRXBnDLC¼Ä´æÆ÷*********************/
-#define RTR 		0x40				//Ô¶³Ì·¢ËÍÇëÇóÎ»
-/**************TXBnSIDL¼Ä´æÆ÷ºÍRXFnSIDL¼Ä´æÆ÷****************/
-#define EXIDE 		0x08				//À©Õ¹±êÊ¶·ûÊ¹ÄÜÎ»
-/**************RXBnSIDL¼Ä´æÆ÷****************/
-#define IDE			0x08				//À©Õ¹±êÊ¶·û±êÖ¾Î»£¬¸ÃÎ»±íÃ÷ÊÕµ½µÄ±¨ÎÄÊÇ±ê×¼Ö¡»¹ÊÇÀ©Õ¹Ö¡
-#define SRR			0x10 				//Ô¶³Ì·¢ËÍÇëÇóÎ»£¨Ö»ÓÐµ±IDEÎ» = 0Ê±ÓÐÐ§£©
-/************************************************************************************
-			        ¶¨ÒåMCP2515ÖÐ¶ÏÊ¹ÄÜ¼Ä´æÆ÷µÄÃüÁî×Ö
-************************************************************************************/
-#define MERRF		0x80				//±¨ÎÄ´íÎóÖÐ¶ÏÊ¹ÄÜÎ»
-#define WAKIF		0x40				//»½ÐÑÖÐ¶ÏÊ¹ÄÜÎ»
-#define ERRIF		0x20				//´íÎóÖÐ¶ÏÊ¹ÄÜÎ»
-#define TX2IF		0x10				//·¢ËÍ»º³åÆ÷2¿ÕÖÐ¶ÏÊ¹ÄÜÎ»
-#define TX1IF		0x08				//·¢ËÍ»º³åÆ÷1¿ÕÖÐ¶ÏÊ¹ÄÜÎ»
-#define TX0IF		0x04				//·¢ËÍ»º³åÆ÷0¿ÕÖÐ¶ÏÊ¹ÄÜÎ»
-#define RX1IF		0x02				//½ÓÊÕ»º³åÆ÷1ÂúÖÐ¶ÏÊ¹ÄÜÎ»
-#define RX0IF		0x01				//½ÓÊÕ»º³åÆ÷0ÂúÖÐ¶ÏÊ¹ÄÜÎ»
-/************************************************************************************
-			        ¶¨ÒåMCP2515²Ù×÷µÄÃüÁî×Ö
-************************************************************************************/
-#define CAN_RESET 		0xc0				//¸´Î»ÃüÁî
-#define CAN_W			0x02				//Ð´ÃüÁî+£¨µØÖ·+Êý¾Ý£©
-#define CAN_W_BUFFER	0x40			//×°ÔØ·¢ËÍ»º³åÇøÃüÁî[0-2]
- 								//000 Ö¸ÕëÆðÊ¼ÓÚTXB0SIDH£»001Ö¸ÕëÆðÊ¼ÓÚTXB0D0				
-								//010 Ö¸ÕëÆðÊ¼ÓÚTXB1SIDH£»001Ö¸ÕëÆðÊ¼ÓÚTXB0D1
-								//100 Ö¸ÕëÆðÈçÓÚTXB2SIDH£»101Ö¸ÕëÆðÊ¼ÓÚTXB0D2
-#define CAN_R			0x03				//¶ÁÃüÁî+£¨µØÖ·£©
-#define CAN_R_BUFFER	0x90				//¶ÁËç³åÇøÖ¸Áî[1-2]00Ö¸ÕëÆðÊ¼ÓÚRXB0SIDH;01Ö¸ÕëÆðÊ¼ÓÚRXB0D0
-											//10 Ö¸ÕëÆðÊ¼ÓÚRXB1SIDH;11Ö¸ÕëÆðÊ¼ÓÚRXB1D0
-#define CAN_R_STATE		0xa0				//¶Á×´Ì¬ÃüÁî
-#define CAN_RX 			0xb0				//¶Á³ö½ÓÊÕ»º³åÇøµÄ×´Ì¬
-#define CAN_M_BIT		0x01				//Î»ÐÞ¸ÄÃüÁî+µØÖ·+ÆÁ±Î×Ö½Ú+Êý¾Ý×Ö½Ú
-#define CAN_RTS			0x80				//ÇëÇó·¢ËÍÃüÁî[0-3]000ÎÞ·¢ËÍ£»001 TX0;010 TX1;100 TX2
+#define CNF1		MCP2515_BASE + 0x2a  //配置寄存器1
+#define CNF2		MCP2515_BASE + 0x29  //配置寄存器2
+#define CNF3		MCP2515_BASE + 0x28  //配置寄存器3
+#define TEC			MCP2515_BASE + 0x1c  //发送错误计数器
+#define REC			MCP2515_BASE + 0x1d  //接收错误计数器
+#define EFLG		MCP2515_BASE + 0x2d  //错误标志寄存器，最高2位必须由MCU复位
+#define CANINTE		MCP2515_BASE + 0x2b  //中断使能寄存器
+#define CANINTF		MCP2515_BASE + 0x2c  //中断标志寄存器，写0则清除相应的中断；
+#define CANCTRL		MCP2515_BASE + 0x0f  //CAN控制寄存器
+#define CANSTAT		MCP2515_BASE + 0x0e  //CAN状态寄存器
 
 /************************************************************************************
-			        ¶¨ÒåMCP2515µÄCAN¹¤×÷Ä£Ê½
+			定义EFLG错误标志寄存器的命令字
 ************************************************************************************/
-#define CAN_Config_Mode 		0x80			//ÅäÖÃÄ£Ê½
-#define CAN_Listen_Only_Mode	0x60			//½ö¼àÌýÄ£Ê½
-#define CAN_LoopBack_Mode		0x40			//»·»ØÄ£Ê½
-#define CAN_Sleep_Mode			0x20			//ÐÝÃßÄ£Ê½
-#define	CAN_Normal_Mode			0x00			//Õý³£¹¤×÷Ä£Ê½
+#define EWARN		0x01<<0 			//错误警告寄存器，当TEC或REC大于等于96时置1
+#define RXWAR		0x01<<1 			//当REC大于等于96时置1
+#define TXWAR		0x01<<2 			//当TEC大于等于96时置1
+#define RXEP		0x01<<3 			//当REC大于等于128时置1
+#define TXEP		0x01<<4 			//当TEC大于等于128时置1
+#define TXBO		0x01<<5 			//当TEC大于等于255时置1
+#define RX0OVR 		0x01<<6				//接收缓冲区0溢出
+#define RX1OVR 		0x01<<7				//接收缓冲区1溢出
 /************************************************************************************
-			        ¶¨ÒåMCP2515µÄCAN¹¤×÷Ä£Ê½
+			定义TXBnCTRL寄存器的命令字
 ************************************************************************************/
-#define CAN_I_RESET				0xc0			//¸´Î»
-#define CAN_I_READ				0x03			//´Ó¼Ä´æÆ÷ÖÐ¶Á³öÊý¾Ý
-#define	CAN_I_READ_RX			0x90			//¶ÁRX»º³åÆ÷Ö¸Áî
-#define CAN_I_WRITE				0x02			//Ïò¼Ä´æÆ÷ÖÐÐ´ÈëÊý¾Ý
-#define CAN_I_WRITE_TX			0x40			//×°ÔØTX»º³åÆ÷Ö¸Áî
-#define CAN_I_RTS				0x80			//·¢ËÍÇëÇó
-#define CAN_I_READ_STATE		0xa0			//¶ÁÈ¡¼Ä´æÆ÷×´Ì¬
-#define	CAN_I_RX_STATE			0xb0			//¿ìËÙÈ·¶¨Óë±¨ÎÄºÍ±¨ÎÄÀàÐÍÏàÆ¥ÅäµÄÂË²¨Æ÷
-#define CAN_I_BIT_CHANGE		0x05			//Î»ÐÞ¸ÄÖ¸Áî
+#define TXREQ		0x08				//报文发送请求位
+#define ABTF		0x40				//报文发送中止标记位
+/****************TXBnDLC寄存器和RXBnDLC寄存器*********************/
+#define RTR 		0x40				//远程发送请求位
+/**************TXBnSIDL寄存器和RXFnSIDL寄存器****************/
+#define EXIDE 		0x08				//扩展标识符使能位
+/**************RXBnSIDL寄存器****************/
+#define IDE			0x08				//扩展标识符标志位，该位表明收到的报文是标准帧还是扩展帧
+#define SRR			0x10 				//远程发送请求位（只有当IDE位 = 0时有效）
+/************************************************************************************
+			        定义MCP2515中断使能寄存器的命令字
+************************************************************************************/
+#define MERRF		0x80				//报文错误中断使能位
+#define WAKIF		0x40				//唤醒中断使能位
+#define ERRIF		0x20				//错误中断使能位
+#define TX2IF		0x10				//发送缓冲器2空中断使能位
+#define TX1IF		0x08				//发送缓冲器1空中断使能位
+#define TX0IF		0x04				//发送缓冲器0空中断使能位
+#define RX1IF		0x02				//接收缓冲器1满中断使能位
+#define RX0IF		0x01				//接收缓冲器0满中断使能位
+/************************************************************************************
+			        定义MCP2515操作的命令字
+************************************************************************************/
+#define CAN_RESET 		0xc0				//复位命令
+#define CAN_W			0x02				//写命令+（地址+数据）
+#define CAN_W_BUFFER	0x40			//装载发送缓冲区命令[0-2]
+ 								//000 指针起始于TXB0SIDH；001指针起始于TXB0D0				
+								//010 指针起始于TXB1SIDH；001指针起始于TXB0D1
+								//100 指针起如于TXB2SIDH；101指针起始于TXB0D2
+#define CAN_R			0x03				//读命令+（地址）
+#define CAN_R_BUFFER	0x90				//读绥冲区指令[1-2]00指针起始于RXB0SIDH;01指针起始于RXB0D0
+											//10 指针起始于RXB1SIDH;11指针起始于RXB1D0
+#define CAN_R_STATE		0xa0				//读状态命令
+#define CAN_RX 			0xb0				//读出接收缓冲区的状态
+#define CAN_M_BIT		0x01				//位修改命令+地址+屏蔽字节+数据字节
+#define CAN_RTS			0x80				//请求发送命令[0-3]000无发送；001 TX0;010 TX1;100 TX2
+
+/************************************************************************************
+			        定义MCP2515的CAN工作模式
+************************************************************************************/
+#define CAN_Config_Mode 		0x80			//配置模式
+#define CAN_Listen_Only_Mode	0x60			//仅监听模式
+#define CAN_LoopBack_Mode		0x40			//环回模式
+#define CAN_Sleep_Mode			0x20			//休眠模式
+#define	CAN_Normal_Mode			0x00			//正常工作模式
+/************************************************************************************
+			        定义MCP2515的CAN工作模式
+************************************************************************************/
+#define CAN_I_RESET				0xc0			//复位
+#define CAN_I_READ				0x03			//从寄存器中读出数据
+#define	CAN_I_READ_RX			0x90			//读RX缓冲器指令
+#define CAN_I_WRITE				0x02			//向寄存器中写入数据
+#define CAN_I_WRITE_TX			0x40			//装载TX缓冲器指令
+#define CAN_I_RTS				0x80			//发送请求
+#define CAN_I_READ_STATE		0xa0			//读取寄存器状态
+#define	CAN_I_RX_STATE			0xb0			//快速确定与报文和报文类型相匹配的滤波器
+#define CAN_I_BIT_CHANGE		0x05			//位修改指令
 #endif
