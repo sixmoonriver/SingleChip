@@ -1,0 +1,112 @@
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 Nov26 ?        00:01:14 init [2]  
+root         2     0  0 Nov26 ?        00:00:00 [kthreadd]
+root         3     2  0 Nov26 ?        00:00:00 [migration/0]
+root         4     2  0 Nov26 ?        01:12:20 [ksoftirqd/0]
+root         5     2  0 Nov26 ?        00:00:00 [watchdog/0]
+root         6     2  0 Nov26 ?        00:00:00 [migration/1]
+root         7     2  0 Nov26 ?        03:25:47 [ksoftirqd/1]
+root         8     2  0 Nov26 ?        00:00:00 [watchdog/1]
+root         9     2  0 Nov26 ?        00:01:49 [events/0]
+root        10     2  0 Nov26 ?        00:20:52 [events/1]
+root        11     2  0 Nov26 ?        00:00:00 [khelper]
+root        44     2  0 Nov26 ?        00:00:03 [kblockd/0]
+root        45     2  0 Nov26 ?        00:00:07 [kblockd/1]
+root        47     2  0 Nov26 ?        00:00:00 [kacpid]
+root        48     2  0 Nov26 ?        00:00:00 [kacpi_notify]
+root       132     2  0 Nov26 ?        00:00:00 [kseriod]
+root       175     2  0 Nov26 ?        00:00:07 [kswapd0]
+root       176     2  0 Nov26 ?        00:00:00 [aio/0]
+root       177     2  0 Nov26 ?        00:00:00 [aio/1]
+root       653     2  0 Nov26 ?        00:00:00 [ksuspend_usbd]
+root       662     2  0 Nov26 ?        00:00:00 [khubd]
+root       782     2  0 Nov26 ?        00:00:00 [ata/0]
+root       783     2  0 Nov26 ?        00:00:00 [ata/1]
+root       784     2  0 Nov26 ?        00:00:00 [ata_aux]
+root       806     2  0 Nov26 ?        00:00:00 [scsi_eh_0]
+root       810     2  0 Nov26 ?        00:00:00 [scsi_eh_1]
+root       952     2  0 Nov26 ?        00:00:00 [kstriped]
+root       958     2  0 Nov26 ?        00:00:00 [ksnapd]
+root       988     2  0 Nov26 ?        00:01:19 [kjournald]
+root      1064     1  0 Nov26 ?        00:00:00 udevd --daemon
+root      1544     2  0 Nov26 ?        00:00:00 [kpsmoused]
+root      1814     2  0 Nov26 ?        00:00:06 [kjournald]
+root      1821     2  0 Nov26 ?        00:00:00 [kjournald]
+root      1822     2  0 Nov26 ?        00:00:03 [kjournald]
+root      1823     2  0 Nov26 ?        00:07:05 [kjournald]
+root      1856     1  0 Nov26 ?        00:00:05 /sbin/auditd
+root      1858  1856  0 Nov26 ?        00:00:09 /sbin/audispd
+root      1859     2  0 Nov26 ?        00:00:00 [kauditd]
+daemon    1951     1  0 Nov26 ?        00:00:00 /sbin/portmap
+statd     1962     1  0 Nov26 ?        00:00:00 /sbin/rpc.statd
+root      1979     2  0 Nov26 ?        00:00:00 [iscsi_eh]
+root      1995     2  0 Nov26 ?        00:00:00 [ib_addr]
+root      2006     2  0 Nov26 ?        00:00:00 [ib_mcast]
+root      2011     2  0 Nov26 ?        00:00:00 [iw_cm_wq]
+root      2015     2  0 Nov26 ?        00:00:00 [ib_cm/0]
+root      2017     2  0 Nov26 ?        00:00:00 [ib_cm/1]
+root      2021     2  0 Nov26 ?        00:00:00 [rdma_cm]
+root      2027     1  0 Nov26 ?        00:01:29 /usr/sbin/iscsid
+root      2028     1  0 Nov26 ?        00:17:28 /usr/sbin/iscsid
+root      2183     1  0 Nov26 ?        00:04:05 /usr/sbin/rsyslogd -c3
+root      2210     1  0 Nov26 ?        00:00:33 /usr/sbin/openvpn --writepid /var/run/openvpn.server.pid --daemon ovpn-server --cd /etc/openvpn --config /etc/openvpn/server.conf
+root      2226     1  0 Nov26 ?        00:00:00 /usr/sbin/sshd
+root      2266     1  0 Nov26 ?        00:00:00 /bin/sh /usr/bin/mysqld_safe
+mysql     2303  2266  0 Nov26 ?        00:21:02 /usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --user=mysql --pid-file=/var/run/mysqld/mysqld.pid --skip-external-locking --port=3306 --socket=/var/run/mysqld/mysqld.sock
+root      2304  2266  0 Nov26 ?        00:00:00 logger -p daemon.err -t mysqld_safe -i -t mysqld
+openldap  2368     1  0 Nov26 ?        00:00:00 /usr/sbin/slapd -g openldap -u openldap -f /etc/ldap/slapd.conf
+101       2634     1  0 Nov26 ?        00:00:01 /usr/sbin/exim4 -bd -q30m
+root      2654     1  0 Nov26 ?        00:00:00 /usr/sbin/ietd
+root      2656     2  0 Nov26 ?        00:00:00 [istd1]
+root      2657     2  0 Nov26 ?        00:00:00 [istiod1]
+root      2658     2  0 Nov26 ?        00:00:00 [istiod1]
+root      2659     2  0 Nov26 ?        00:00:00 [istiod1]
+root      2660     2  0 Nov26 ?        00:00:00 [istiod1]
+root      2661     2  0 Nov26 ?        00:00:00 [istiod1]
+root      2662     2  0 Nov26 ?        00:00:00 [istiod1]
+root      2663     2  0 Nov26 ?        00:00:00 [istiod1]
+root      2664     2  0 Nov26 ?        00:00:00 [istiod1]
+root      2719     1  0 Nov26 ?        00:00:00 nginx: master process /usr/sbin/nginx
+www-data  2720  2719  0 Nov26 ?        00:26:30 nginx: worker process
+www-data  2721  2719  0 Nov26 ?        00:34:02 nginx: worker process
+www-data  2722  2719  0 Nov26 ?        00:36:13 nginx: worker process
+www-data  2724  2719  0 Nov26 ?        00:00:00 nginx: worker process
+www-data  2725  2719  0 Nov26 ?        00:36:03 nginx: worker process
+www-data  2726  2719  0 Nov26 ?        00:33:32 nginx: worker process
+www-data  2727  2719  0 Nov26 ?        00:33:15 nginx: worker process
+www-data  2728  2719  0 Nov26 ?        00:33:41 nginx: worker process
+www-data  2729  2719  0 Nov26 ?        00:42:20 nginx: worker process
+www-data  2730  2719  0 Nov26 ?        00:19:00 nginx: worker process
+www-data  2731  2719  0 Nov26 ?        00:28:30 nginx: worker process
+www-data  2732  2719  0 Nov26 ?        00:29:17 nginx: worker process
+www-data  2733  2719  0 Nov26 ?        00:37:57 nginx: worker process
+www-data  2734  2719  0 Nov26 ?        00:29:08 nginx: worker process
+www-data  2737  2719  0 Nov26 ?        00:27:14 nginx: worker process
+www-data  2738  2719  0 Nov26 ?        00:23:04 nginx: worker process
+root      2741     1  0 Nov26 ?        00:01:13 /usr/sbin/nscd
+root      2756     1  0 Nov26 ?        00:00:00 /usr/sbin/pptpd
+snmp      2769     1  0 Nov26 ?        00:13:16 /usr/sbin/snmpd -Lsd -Lf /dev/null -u snmp -I -smux -p /var/run/snmpd.pid
+zabbix    2781     1  0 Nov26 ?        00:00:00 /usr/sbin/zabbix_agentd
+zabbix    2783  2781  0 Nov26 ?        00:56:02 /usr/sbin/zabbix_agentd
+zabbix    2784  2781  0 Nov26 ?        00:00:00 /usr/sbin/zabbix_agentd
+zabbix    2785  2781  0 Nov26 ?        00:00:00 /usr/sbin/zabbix_agentd
+zabbix    2786  2781  0 Nov26 ?        00:00:00 /usr/sbin/zabbix_agentd
+zabbix    2787  2781  0 Nov26 ?        00:00:08 /usr/sbin/zabbix_agentd
+root      2839     1  0 Nov26 ?        02:00:34 ruby /usr/sbin/puppetd -w 5
+ntp       2852     1  0 Nov26 ?        00:00:19 /usr/sbin/ntpd -p /var/run/ntpd.pid -u 103:105 -g
+root      2861     1  0 Nov26 ?        00:00:05 /sbin/mdadm --monitor --pid-file /var/run/mdadm/monitor.pid --daemonise --scan --syslog
+root      2892     1  0 Nov26 ?        00:00:12 /usr/sbin/cron
+108       2930     1  0 Nov26 ?        00:00:09 /usr/sbin/smokeping [FPing]
+root      2981     1  0 Nov26 tty1     00:00:00 /sbin/getty -f /etc/issue.linuxlogo 38400 tty1
+root      2983     1  0 Nov26 tty2     00:00:00 /sbin/getty -f /etc/issue.linuxlogo 38400 tty2
+root      2984     1  0 Nov26 tty3     00:00:00 /sbin/getty -f /etc/issue.linuxlogo 38400 tty3
+root      2986     1  0 Nov26 tty4     00:00:00 /sbin/getty -f /etc/issue.linuxlogo 38400 tty4
+root      2987     1  0 Nov26 tty5     00:00:00 /sbin/getty -f /etc/issue.linuxlogo 38400 tty5
+root      2988     1  0 Nov26 tty6     00:00:00 /sbin/getty -f /etc/issue.linuxlogo 38400 tty6
+root      4665  2226  0 23:09 ?        00:00:00 sshd: root@pts/1 
+root      4667  4665  0 23:09 pts/1    00:00:00 -bash
+root      4698  4667  0 23:18 pts/1    00:00:00 ps -ef
+root      9690     2  0 Nov28 ?        00:02:10 [pdflush]
+root      9718     2  0 Nov28 ?        00:00:00 [pdflush]
+root     27186  2226  0 Dec15 ?        00:00:00 sshd: root@pts/0 
+root     27188 27186  0 Dec15 pts/0    00:00:00 -bash
