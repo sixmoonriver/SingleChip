@@ -22,6 +22,7 @@ struct My24bit
 delayreset()
 {
 int i;
+Send_Dat=0;
 for(i=0;i<60;i++)
 	_nop_();
 }
@@ -29,11 +30,14 @@ for(i=0;i<60;i++)
 /*写入数据时序*/
 void Send_A_bit(uchar VAL)
 {
-       if (VAL==1)
+//	for(i=0;i<8;i++)
+	//{
+	
+		if (VAL==1)
        {
               Send_Dat=1;
               _nop_();
-              Send_Dat=0;            //2.17us
+              Send_Dat=0; 
        }
        else
        {
@@ -41,29 +45,51 @@ void Send_A_bit(uchar VAL)
               Send_Dat=0;           
               _nop_();
        }           
-      
+	//} 
 }
 /* send fram */
 
 void Send_One_Pix(struct My24bit RGB)
 {
-	int i,j;
-	for(i=0;i<8;i++)
+	int k,j;		
+	for(k=0;k<3;k++ ) //发送24个bit，也就是一个LED的控制
+		{
+			for(j=0;j<8;j++)
+			{
+				if(k==0)
+				{
+					Send_A_bit(RGB.Green_val>>j&0x01);
+				}
+				else if(k==1)
+				{
+					Send_A_bit(RGB.Red_val>>j&0x01); 
+				}
+				else if(k==2)
+				{
+					Send_A_bit(RGB.Blue_val>>j&0x01);;
+				}
+				
+			}
+		} 
+	
+	
+/*	int i,j;
+	for(i=0;i<8;i--)
 	{
-	  send_BUF[i] = RGB.Green_val>>i&0x01;
-		Send_A_bit(send_BUF[i]);
+//	  send_BUF[i] = RGB.Green_val>>i&0x01;
+	  Send_A_bit(RGB.Green_val<<i&0x80);
 	}
 	for(i=8;i<16;i++)
 		{
-		send_BUF[i] = RGB.Red_val>>(i-8)&0x01;
-		Send_A_bit(send_BUF[i]);
+//		send_BUF[i] = RGB.Red_val>>(i-8)&0x01;
+		Send_A_bit(RGB.Red_val<<(i-8)&0x80);
 		}
 	for(i=16;i<24;i++)
 		{
-		send_BUF[i] = RGB.Blue_val>>(i-16)&0x01;
-		Send_A_bit(send_BUF[i]);
+//		send_BUF[i] = RGB.Blue_val>>(i-16)&0x01;
+		Send_A_bit(RGB.Blue_val<<(i-16)&0x80);
 		}
-/*	for(i=0;i<24;i++)
+	for(i=0;i<24;i++)
 		{	
 			Send_A_bit(send_BUF[i]);
 		}*/
@@ -72,6 +98,7 @@ void Send_Fram(int ledcount,struct My24bit leddata)
 {
 	int i;
 	for(i=0;i<ledcount;i++)
+	
 	{
 		Send_One_Pix(leddata);
 	}
@@ -80,9 +107,9 @@ void Send_Fram(int ledcount,struct My24bit leddata)
 
 main()
 {
-	a.Green_val = 0x00;
+	a.Green_val = 0x10;
 	a.Red_val = 0x00;
-	a.Blue_val = 0xff;
+	a.Blue_val = 0x00;
 	b.Green_val = 0x00;
 	b.Red_val = 0x00;
 	b.Blue_val = 0xff;
@@ -109,28 +136,30 @@ main()
 	while(1)
 {
 	int i,k,j;
-	for(i=0;i<8;i++)
+	for(i=0;i<6;i++)
 {
-		for(k=0;k<3;k++ ) //发送24个bit，也就是一个LED的控制
+		int k,j;		
+	for(k=0;k<3;k++ ) //发送24个bit，也就是一个LED的控制
 		{
 			for(j=0;j<8;j++)
 			{
 				if(k==0)
 				{
-						Send_A_bit(0);
+					Send_A_bit(a.Green_val>>j&0x01);
 				}
 				else if(k==1)
 				{
-					Send_A_bit(0); 
+					Send_A_bit(a.Red_val>>j&0x01); 
 				}
 				else if(k==2)
 				{
-					Send_A_bit(1);
+					Send_A_bit(a.Blue_val>>j&0x01);;
 				}
 				
 			}
 		} 
 }
+
 	delayreset();
 }
 }
