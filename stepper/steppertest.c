@@ -3,10 +3,12 @@
  #define uchar unsigned char
  #define uint unsigned int
  
- uchar code CCW[8]={0x08,0x0c,0x04,0x06,0x02,0x03,0x01,0x09};   //逆时钟旋转相序表
- uchar code CW[8]={0x09,0x01,0x03,0x02,0x06,0x04,0x0c,0x08};    //正时钟旋转相序表
-
-
+ //uchar code CCW[8]={0x08,0x0c,0x04,0x06,0x02,0x03,0x01,0x09};   //逆时钟旋转8拍相序表
+ //uchar code CW[8]={0x09,0x01,0x03,0x02,0x06,0x04,0x0c,0x08};    //顺时钟旋转8拍相序表
+ //uchar code CCW[8]={0x03,0x09,0x0c,0x06};   //逆时钟旋转4拍相序表
+ //uchar code CW[8]={0x03,0x06,0x0c,0x09};    //顺时钟旋转4拍相序表
+ uchar code CCW[8]={0x33,0x99,0xcc,0x66};   //双电机逆时钟旋转4拍相序表
+ uchar code CW[8]={0x33,0x66,0xcc,0x99};    //双电机顺时钟旋转4拍相序表
  sbit S4=P3^2;  //反转按键
  sbit S3=P3^3;  //正转按键
  sbit S2=P3^4;  //停止按键
@@ -56,7 +58,7 @@ void motor_ccw(void)
  {
    break;   //如果S2按下，退出此循环
  }
- for(i=0;i<8;i++)  //旋转45度
+ for(i=0;i<4;i++)  //旋转45度
  {
    P0=CCW[i];
    delaynms(5);   //调节转速
@@ -74,7 +76,7 @@ void motor_cw(void)
  {
    break;   //如果S2按下，退出此循环
  }
- for(i=0;i<8;i++)  //旋转45度
+ for(i=0;i<4;i++)  //旋转45度
  {
    P0=CW[i];
    delaynms(5);   //调节转速
@@ -134,6 +136,6 @@ void main(void)
 		}
    }
    else
-		 P0=0xf0;    //电机停止
+		 P0=0x00;    //电机停止
  }
 }      
